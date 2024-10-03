@@ -4,15 +4,23 @@ body {
     color: #333;
 }
 
-.logo {
-    font-family: 'Brush Script MT', cursive;
-    font-size: 40px;
-    color: #4b4cfe;
-    margin-left: 20px;
+.image-container {
+    display: flex;
+    justify-content: left;
+    align-items: left;
 }
 
-.navbar-custom {
-    background-color: rgba(255, 255, 255, 0.5); /* Set transparansi 50% */
-    border: none; /* Hapus border default */
-  }
-  
+.image-container img {
+    width: 600px;
+    height: 550px;
+    object-fit: cover;
+}
+
+.login-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px; 
+}
