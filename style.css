@@ -1,0 +1,18 @@
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom right, #f7d6de, #d5e7ee, #7391a8);
+    color: #333;
+}
+
+.logo {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 40px;
+    color: #4b4cfe;
+    margin-left: 20px;
+}
+
+.navbar-custom {
+    background-color: rgba(255, 255, 255, 0.5); /* Set transparansi 50% */
+    border: none; /* Hapus border default */
+  }
+  
