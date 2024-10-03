@@ -1,7 +1,7 @@
 body {
-    height: 100vh;
+    margin: 0; /* Hapus margin default */
+    padding: 0; /* Hapus padding default */
     background: linear-gradient(to bottom right, #f7d6de, #d5e7ee, #7391a8);
-    color: #333;
 }
 
 .image-container {
@@ -16,11 +16,8 @@ body {
     object-fit: cover;
 }
 
-.login-container {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px; 
+#logo-Text{
+    font-family: 'Brush Script MT', cursive;
+    font-size: 35px;
+    color: blue;
 }
