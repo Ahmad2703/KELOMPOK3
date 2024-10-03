@@ -9,3 +9,33 @@ body {
     font-size: 35px;
     color: blue;
 }
+
+.navbar-brand {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2rem;
+    color: #365DD9;
+}
+
+body.login-page {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #f7d6de, #d5e7ee, #7391a8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn-custom {
+    background-color: #6f63f2;
+    color: white;
+    width: 100%;
+}
+
+.jumbotron {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+}
