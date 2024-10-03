@@ -4,18 +4,6 @@ body {
     background: linear-gradient(to bottom right, #f7d6de, #d5e7ee, #7391a8);
 }
 
-.image-container {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-}
-
-.image-container img {
-    width: 600px;
-    height: 550px;
-    object-fit: cover;
-}
-
 #logo-Text{
     font-family: 'Brush Script MT', cursive;
     font-size: 35px;
