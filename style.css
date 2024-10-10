@@ -1,41 +1,210 @@
-body {
-    margin: 0; /* Hapus margin default */
-    padding: 0; /* Hapus padding default */
-    background: linear-gradient(to bottom right, #f7d6de, #d5e7ee, #7391a8);
-}
-
-#logo-Text{
-    font-family: 'Brush Script MT', cursive;
-    font-size: 35px;
-    color: blue;
-}
-
-.navbar-brand {
-    font-family: 'Brush Script MT', cursive;
-    font-size: 2rem;
-    color: #365DD9;
-}
-
-body.login-page {
+/* Universal reset dan font setting */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Setting body agar background memenuhi layar */
+body {
     background: linear-gradient(to bottom right, #f7d6de, #d5e7ee, #7391a8);
+    min-height: 100vh; /* Menjamin bahwa background mengisi seluruh tinggi viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling container dan image */
+.container {
+    display: flex;
+    align-items: center; /* Konten berada di tengah vertikal */
+    justify-content: space-between; /* Jarak antara gambar dan teks */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.image-container {
+    flex: 1; /* Mengambil satu bagian dari ruang yang tersedia */
+    max-width: 50%; /* Batasi lebar gambar */
+}
+
+.image-container img {
+    width: 100%; /* Gambar menyesuaikan dengan lebar container */
+    height: auto; /* Menjaga proporsi gambar */
+}
+
+/* Styling navbar */
+nav {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.navbar-nav {
+    font-size: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 15px; /* Memberi jarak kiri dan kanan item */
+}
+
+/* Styling logo */
+#logo-Text {
+    font-family: 'Garamond', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    color: #4b4cfe;
+}
+
+/* Spesifik halaman login */
+body.login-page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: linear-gradient(to bottom right, #f7d6de, #d5e7ee, #7391a8);
 }
 
+/* Styling tombol */
 .btn-custom {
     background-color: #6f63f2;
     color: white;
     width: 100%;
 }
 
+/* Styling jumbotron */
 .jumbotron {
     background: white;
     padding: 2rem;
     border-radius: 10px;
     max-width: 500px;
     width: 100%;
+}
+
+/* Toggle button */
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.openbtn {
+    font-size: 28px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+/* Toggle sidebar*/
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    padding: 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+main {
+    margin-top: 70px;
+    transition: margin-left 0.5s;
+    padding: 16px;
+}
+
+/* Responsive sidebar */
+@media screen and (max-height: 450px) {
+    .sidebar { padding-top: 15px; }
+    .sidebar a { font-size: 18px; }
+}
+
+/* Left column */
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+/* Card */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+
+/* Index Styling */
+.offer {
+    font-size: 22px;
+    color: #4b4cfe;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.main-heading {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.highlight {
+    color: red;
+}
+
+.content {
+    max-width: 600px;
+    text-align: right;
 }
