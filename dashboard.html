@@ -12,71 +12,72 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <aside id="sidebar">
-            <div class="d-flex">
-                <button class="toggle-btn" type="button">
-                    <i class="lni lni-menu"></i>
-                </button>
-                <div class="sidebar-logo">
-                    <a href="#">Dashboard</a>
+   <!-- Membuat SideBar-->
+   <div class="wrapper">
+    <aside id="sidebar">
+        <div class="d-flex">
+            <button class="toggle-btn" type="button">
+                <i class="lni lni-menu"></i>
+            </button>
+            <div class="sidebar-logo">
+                <a href="#">Dashboard</a>
+            </div>
+        </div>
+        <nav class="nav navbar-expand-lg bg-transparent">
+            <div class="container-fluid mx-5">
+                <div class="ms-auto">
+                    <a class="navbar-brand" id="logo-Text-home" href="dashboard.html">Class Digital</a>
                 </div>
             </div>
-            <nav class="navbar navbar-expand-lg bg-transparan">
-                <div class="container-fluid mx-5">
-                    <div class="ms-auto">
-                        <a class="navbar-brand" id="logo-Text-home" href="home.html">Class Digital</a>
-                    </div>
-                </div>
-            </nav>
-            <ul class="sidebar-nav">
-                <li class="sidebar-item">
-                    <a href="home.html" class="sidebar-link">
-                        <i class="lni lni-home"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="profile.html" class="sidebar-link">
-                        <i class="lni lni-user"></i>
-                        <span>Profile</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                        data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
-                        <i class="lni lni-book"></i>
-                        <span>Class</span>
-                    </a>
-                    <ul id="multi" class="sidebar-dropdown list-unstyled collapse">
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Class 1</a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Class 2</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="lni lni-popup"></i>
-                        <span>Notification</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="lni lni-cog"></i>
-                        <span>Setting</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="sidebar-footer">
-                <a id="LogOutButton" class="sidebar-link">
-                    <i class="lni lni-exit"></i>
-                    <span>LOG OUT</span>
+        </nav>
+        <ul class="sidebar-nav">
+            <li class="sidebar-item">
+                <a href="home.html" class="sidebar-link">
+                    <i class="lni lni-home"></i>
+                    <span>Home</span>
                 </a>
-            </div>
-        </aside>
+            </li>
+            <li class="sidebar-item">
+                <a href="profile.html" class="sidebar-link">
+                    <i class="lni lni-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                    data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
+                    <i class="lni lni-book"></i>
+                    <span>Class</span>
+                </a>
+                <ul id="multi" class="sidebar-dropdown list-unstyled collapse">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Class 1</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Class 2</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <i class="lni lni-popup"></i>
+                    <span>Notification</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#" class="sidebar-link">
+                    <i class="lni lni-cog"></i>
+                    <span>Setting</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="#" class="sidebar-link">
+                <i class="lni lni-exit"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
 
         <!-- Main -->
         <div class="main p-3">

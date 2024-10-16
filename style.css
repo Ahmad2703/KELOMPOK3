@@ -58,6 +58,9 @@ nav {
     z-index: 1000;
     transition: top 0.3s;
 }
+.navbar{
+    background: linear-gradient(to right,  #d5e7ee, #decbe4, #fed9a6);
+}
 
 .navbar-nav {
     font-size: 20px;
