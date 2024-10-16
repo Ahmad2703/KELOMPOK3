@@ -108,14 +108,11 @@ $(document).ready(function () {
 
 });
 
-// Fungsi jQuery untuk menampilkan animasi eksternal 
-$(window).on('load', function () {
-    // Atur delay selama 2 detik sebelum preloader dihilangkan
+// Fungsi jQuery untuk menampilkan animasi  
+$(document).ready(function () {
+    // Tambahkan delay selama 3 detik (3000 milidetik)
     setTimeout(function () {
-        // Hilangkan animasi
-        $('.preloader').fadeOut('slow', function () {
-             // Tampilkan konten setelah preloader dihilangkan supaya lebih halus
-            $('.content').fadeIn('slow');
-        });
-    }, 2000); // 2000ms = 2 detik
+        // Menghilangkan elemen preloader setelah 3 detik
+        $('.preloader').fadeOut('slow');
+    }, 3000); // 3000 milidetik = 3 detik
 });
