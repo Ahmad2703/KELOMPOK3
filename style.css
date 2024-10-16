@@ -59,7 +59,7 @@ nav {
     transition: top 0.3s;
 }
 .navbar{
-    background: linear-gradient(to right,  #d5e7ee, #decbe4, #fed9a6);
+    background: linear-gradient(to right,  #d5e7ee, #decbe4);
 }
 
 .navbar-nav {
