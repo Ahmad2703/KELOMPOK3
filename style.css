@@ -300,3 +300,30 @@ a.sidebar-link:hover {
     max-width: 600px;
     text-align: right;
 }
+
+/*Styling Profile*/
+.profile {
+    /* Pakai background & box shadow:
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.profile img {
+    display: block;
+    margin: 0 auto;
+}
+
+.img-description {
+    text-align: center;
+    font-style: italic;
+    color: gray;
+    font-size: 0.8em;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
