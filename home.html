@@ -11,6 +11,12 @@
 </head>
 
 <body>
+
+  <!-- Saat halaman sedang memuat, div ini akan menampilkan animasi -->
+  <div class="preloader">
+    <img src="img/loading.gif">
+  </div>
+
   <header>
     <nav class="fixed-top navbar navbar-expand-lg">
       <div class="container-fluid px-5">
@@ -25,7 +31,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Tentang Kami</a>
+              <a class="nav-link active" href="tentangkami.html">Tentang Kami</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="#panduan">Panduan</a>
@@ -111,6 +117,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+  <!-- Menghubungkan file jQuery eksternal -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="jQuery.js"></script>
+
 </body>
 
 
