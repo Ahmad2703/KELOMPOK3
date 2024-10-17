@@ -125,9 +125,9 @@ $(document).ready(function () {
 
 // Fungsi jQuery untuk menampilkan animasi  
 $(document).ready(function () {
-    // Tambahkan delay selama 3 detik (3000 milidetik)
+    // Tambahkan delay selama 1 detik (1000 milidetik)
     setTimeout(function () {
-        // Menghilangkan elemen preloader setelah 3 detik
+        // Menghilangkan elemen preloader setelah 1 detik
         $('.preloader').fadeOut('slow');
-    }, 3000); // 3000 milidetik = 3 detik
+    }, 1000); // 1000 milidetik = 3 detik
 });
