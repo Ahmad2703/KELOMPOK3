@@ -73,6 +73,21 @@ $(document).ready(function () {
     });
 });
 
+// Validasi Logout
+$('#LogOutButton').on('click', function () {
+    // Tampilkan dialog konfirmasi
+    const confirmation = confirm("Apakah Anda yakin ingin logout?");
+    
+    if (confirmation) {
+        // Jika pengguna memilih "OK", lanjutkan proses logout
+        alert("Anda telah logout.");
+        window.location.href = 'home.html';
+    } else {
+        // Jika pengguna memilih "Cancel"
+        alert("Logout dibatalkan.");
+    }
+});
+
 // Buka-tutup Sidebar
 $(document).ready(function () {
     // Toggle sidebar
