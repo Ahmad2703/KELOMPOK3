@@ -128,6 +128,5 @@ $(document).ready(function () {
     setTimeout(function () {
         // Menghilangkan elemen preloader setelah 1 detik
         $('.preloader').fadeOut('slow');
-    }, 1000); // 1000 milidetik = 3 detik
+    }, 1000); // 1000 milidetik = 1 detik
 });
-
