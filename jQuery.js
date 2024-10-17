@@ -1,4 +1,3 @@
-
 // Validasi signUp
 $(document).ready(function () {
     const $signupForm = $('#signupForm');
@@ -131,3 +130,4 @@ $(document).ready(function () {
         $('.preloader').fadeOut('slow');
     }, 1000); // 1000 milidetik = 3 detik
 });
+
