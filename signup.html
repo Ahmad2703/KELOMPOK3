@@ -10,14 +10,43 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body class="login-page">
+<body class="signup-page">
 
     <!-- Saat halaman sedang memuat, div ini akan menampilkan animasi -->
     <div class="preloader">
         <img src="img/loading.gif">
     </div>
+    <header>
+        <!-- Navbar -->
+        <nav class="fixed-top navbar navbar-expand-lg">
+            <div class="container-fluid px-5">
+                <a class="navbar-brand" id="logo-Text" href="index.html">Class Digital</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="home.html#tentangkami">Tentang Kami</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="home.html##panduan">Panduan</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex ms-3">
+                        <a class="btn btn-secondary me-2" href="signup.html">SIGN UP</a>
+                        <a class="btn btn-primary me-2" href="login.html">LOGIN</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
     <!-- Jumbotron untuk Signup -->
-    <div class="jumbotron-login">
+    <div class="jumbotron-signup">
         <h1 class="display-5 text-center">SIGNUP</h1>
         <p class="lead text-center">Silahkan Buat Akun Anda</p>
         <p style="font-size: small; text-align: center;">
