@@ -52,6 +52,12 @@ body {
     /* Menjaga proporsi gambar */
 }
 
+.btn-outline-primary:hover {
+    background-color: #5549cc !important;
+    border-color: #5549cc !important;
+    color: white !important;
+}
+
 /* Styling navbar */
 nav {
     margin: 0;
@@ -67,6 +73,7 @@ nav {
 
 .navbar {
     background: linear-gradient(to right, #d5e7ee, #decbe4);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-nav {
@@ -157,6 +164,12 @@ body.signup-page {
     border-radius: 10px;
     max-width: 500px;
     width: 100%;
+}
+
+.btn-light:hover {
+    background-color: whitesmoke !important;
+    color: black !important;
+    border-color: #f7d6de !important;
 }
 
 /* Styling Sidebar */
