@@ -130,3 +130,65 @@ $(document).ready(function () {
         $('.preloader').fadeOut('slow');
     }, 1000); // 1000 milidetik = 1 detik
 });
+
+// Fungsi jQuery untuk menampilkan kalender
+$(document).ready(function () {
+    const today = new Date();
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
+
+    const months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    function renderCalendar(month, year) {
+        const firstDay = new Date(year, month).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        $("#currentMonth").text(`${months[month]} ${year}`);
+
+        let calendarBody = $("#calendarBody");
+        calendarBody.empty();
+
+        let date = 1;
+        for (let i = 0; i < 6; i++) {
+            let row = $("<tr></tr>");
+            for (let j = 0; j < 7; j++) {
+                if (i === 0 && j < firstDay) {
+                    row.append("<td></td>");
+                } else if (date > daysInMonth) {
+                    break;
+                } else {
+                    let cell = $("<td></td>").text(date);
+                    if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
+                        cell.addClass("current-day");
+                    }
+                    row.append(cell);
+                    date++;
+                }
+            }
+            calendarBody.append(row);
+        }
+    }
+
+    $("#prevMonth").click(function () {
+        currentMonth--;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        }
+        renderCalendar(currentMonth, currentYear);
+    });
+
+    $("#nextMonth").click(function () {
+        currentMonth++;
+        if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        renderCalendar(currentMonth, currentYear);
+    });
+
+    renderCalendar(currentMonth, currentYear);
+});
