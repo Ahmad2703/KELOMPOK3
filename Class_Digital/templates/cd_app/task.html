@@ -2,31 +2,112 @@
 {% load static %}
 
 {% block body_block %}
-      <!-- Main -->
-      <div class="container-task">
-        <div class="title-task">
-          <h1>Materi & Tugas</h1>
-        </div>
-        <div class="wrap-fill-task">
-          <div class="title-fill-task">
-            <h3>Minggu ke-1</h3>
-          </div>
-          <div class="learning mt-5">
-            <h4>Pembelajaran Capaian :</h4>
-            <p>Belum ada informasi</p>
-          </div>
-          <div class="learning mt-4">
-            <h4>Pembelajaran Capaian :</h4>
-            <p>Belum ada informasi</p>
-          </div>
-          <div class="button-link mt-4">
-            <h4 class="mb-5">Link Kelas Online :</h4>
-            <a href="">Klik Disini</a>
-          </div>
-          <div class="wrap-materi">
-            <a href="" class="materi">Materi</a>
-            <a href="" class="non-materi">Tidak Ada Tugas</a>
-          </div>
-        </div>
-      </div>
+
+<head>
+  <style>
+    /* styling task */
+    .container-task {
+      margin-left: 4rem;
+      width: 80%;
+      /* background-color: #000; */
+      margin-top: 6rem;
+      padding-bottom: 2rem;
+    }
+
+    .title-task h1 {
+      color: #3412F6;
+      font-weight: 600;
+    }
+
+    .title-task {
+      border-bottom: 1px solid #3412F6;
+      padding-bottom: 1rem;
+    }
+
+    .wrap-fill-task {
+      margin-top: 2rem;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      padding-bottom: 2rem;
+      background-color: white;
+    }
+
+    .learning h4 {
+      font-weight: 600;
+    }
+
+    .button-link h4 {
+
+      font-weight: 600;
+    }
+
+    .button-link a {
+      text-decoration: none;
+      background-color: #998FFF;
+      padding: 1rem 1.5rem;
+      color: white;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .wrap-materi {
+      margin-top: 4rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    a.materi {
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      background-color: transparent;
+      border: 1px solid #998FFF;
+      transition: .2s ease-in-out;
+      color: black;
+    }
+
+    a.materi:hover {
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      background-color: transparent;
+      color: white;
+      background-color: #998FFF;
+      border: 1px solid #998FFF;
+    }
+
+    a.non-materi {
+      color: white;
+      padding: 0.8rem 1.5rem;
+      background-color: #DA8A8A;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<!-- Main -->
+<div class="container-task">
+  <div class="title-task">
+    <h1>Materi & Tugas</h1>
+  </div>
+  <div class="wrap-fill-task">
+    <div class="title-fill-task">
+      <h3>Minggu ke-1</h3>
+    </div>
+    <div class="learning mt-5">
+      <h4>Pembelajaran Capaian :</h4>
+      <p>Belum ada informasi</p>
+    </div>
+    <div class="learning mt-4">
+      <h4>Pembelajaran Capaian :</h4>
+      <p>Belum ada informasi</p>
+    </div>
+    <div class="button-link mt-4">
+      <h4 class="mb-5">Link Kelas Online :</h4>
+      <a href="">Klik Disini</a>
+    </div>
+    <div class="wrap-materi">
+      <a href="" class="materi">Materi</a>
+      <a href="" class="non-materi">Tidak Ada Tugas</a>
+    </div>
+  </div>
+</div>
 {% endblock %}

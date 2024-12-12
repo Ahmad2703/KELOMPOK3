@@ -2,28 +2,74 @@
 {% load static %}
 
 {% block body_block %}
-      <!-- Main -->
-      <div class="container-recap-values">
-        <div class="title-task">
-          <h1>Rekapitulasi Nilai</h1>
-        </div>
-        <div class="wrap-list-values">
-          <table class="recap-table">
-            <thead>
-              <tr>
-                <th>NO.</th>
-                <th>JENIS</th>
-                <th>JUDUL TUGAS</th>
-                <th>NILAI</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td colspan="4" class="no-data">TIDAK ADA</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+
+<head>
+  <style>
+    /* styling recap-values */
+    .container-recap-values {
+      margin-left: 4rem;
+      width: 80%;
+      /* background-color: #000; */
+      margin-top: 6rem;
+      padding-bottom: 2rem;
+    }
+
+    .wrap-list-values {
+      overflow-x: auto;
+      margin-top: 2rem;
+    }
+
+    .recap-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .recap-table thead th {
+      background-color: #f8f9fa;
+      color: #333;
+      padding: 10px;
+      border: 1px solid #dee2e6;
+    }
+
+    .recap-table tbody td {
+      padding: 10px;
+      border: 1px solid #dee2e6;
+    }
+
+    .recap-table tbody .no-data {
+      color: #666;
+      font-style: italic;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<!-- Main -->
+<div class="container-recap-values">
+  <div class="title-task">
+    <h1>Rekapitulasi Nilai</h1>
+  </div>
+  <div class="wrap-list-values">
+    <table class="recap-table">
+      <thead>
+        <tr>
+          <th>NO.</th>
+          <th>JENIS</th>
+          <th>JUDUL TUGAS</th>
+          <th>NILAI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4" class="no-data">TIDAK ADA</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
 {% endblock %}

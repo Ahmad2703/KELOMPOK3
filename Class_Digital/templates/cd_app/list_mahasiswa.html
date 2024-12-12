@@ -2,64 +2,225 @@
 {% load static %}
 
 {% block body_block %}
-      <!-- Main -->
-      <div class="container-recap-values">
-        <div class="title-task">
-          <h1>Dosen</h1>
+
+<head>
+  <style>
+    /* list mahasiswa */
+    .mahasiswa-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      /* background-color: #ffffff; */
+      border-radius: 10px;
+      /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .profile-icon img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333333;
+    }
+
+    .progress-container {
+      width: 150px;
+      height: 20px;
+      background-color: #d3d3d3;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      width: 25%;
+      height: 100%;
+      background-color: #7a5cff;
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .progress-label {
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1440px) {
+      .container-class {
+        margin-left: 1rem;
+        width: 77%;
+        margin-top: 6rem;
+      }
+
+      .container-detail-class {
+        margin-left: 1rem;
+        width: 77%;
+        margin-top: 6rem;
+        padding-bottom: 2rem;
+      }
+
+      .container-task {
+        margin-left: 1rem;
+
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+
+      /* Gaya untuk smartphone */
+      .container-class {
+        margin-left: 1rem;
+        width: 77%;
+        margin-top: 6rem;
+      }
+
+      .container-detail-class {
+        margin-left: 1rem;
+        width: 77%;
+        margin-top: 6rem;
+        padding-bottom: 2rem;
+      }
+
+      .responsif-form {
+        display: block;
+      }
+
+
+      #sidebar {
+        margin-right: 0rem;
+
+
+      }
+
+      .container-task {
+        margin-left: 1rem;
+
+      }
+
+      .container-presence {
+        margin-left: 1rem;
+        width: 80%;
+        /* background-color: #000; */
+        margin-top: 6rem;
+        padding-bottom: 2rem;
+      }
+
+      .wrap-fill-presence {
+        display: block;
+
+      }
+
+      .container-recap-values {
+        margin-left: 1em;
+
+      }
+
+      a.materi {
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        background-color: transparent;
+        border: 1px solid #998FFF;
+        transition: .2s ease-in-out;
+        color: black;
+      }
+
+      a.non-materi {
+        color: white;
+        padding: 0.5rem 1rem;
+        background-color: #DA8A8A;
+        border-radius: 10px;
+      }
+
+      .learning h4 {
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .mahasiswa-item {
+        display: block;
+        text-align: center;
+      }
+
+      .progress-container {
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+<!-- Main -->
+<div class="container-recap-values">
+  <div class="title-task">
+    <h1>Dosen</h1>
+  </div>
+  <div class="list-mahasiswa">
+    <div class="mahasiswa-item">
+      <div class="profile">
+        <div class="profile-icon">
+          <img src="./img/profile.jpg" alt="Profile Icon" />
         </div>
-        <div class="list-mahasiswa">
-          <div class="mahasiswa-item">
-            <div class="profile">
-              <div class="profile-icon">
-                <img src="./img/profile.jpg" alt="Profile Icon" />
-              </div>
-              <span class="name">Muhammad Imam</span>
-            </div>
-          </div>
+        <span class="name">Muhammad Imam</span>
+      </div>
+    </div>
+  </div>
+  <div class="title-task mt-5">
+    <h1>Mahasiswa</h1>
+  </div>
+  <div class="list-mahasiswa">
+    <div class="mahasiswa-item">
+      <div class="profile">
+        <div class="profile-icon">
+          <img src="./img/profile.jpg" alt="Profile Icon" />
         </div>
-        <div class="title-task mt-5">
-          <h1>Mahasiswa</h1>
-        </div>
-        <div class="list-mahasiswa">
-          <div class="mahasiswa-item">
-            <div class="profile">
-              <div class="profile-icon">
-                <img src="./img/profile.jpg" alt="Profile Icon" />
-              </div>
-              <span class="name">Muhammad Imam</span>
-            </div>
-            <div class="progress-container">
-              <div class="progress-bar">
-                <span class="progress-label">25%</span>
-              </div>
-            </div>
-          </div>
-          <div class="mahasiswa-item">
-            <div class="profile">
-              <div class="profile-icon">
-                <img src="./img/profile.jpg" alt="Profile Icon" />
-              </div>
-              <span class="name">Muhammad Imam</span>
-            </div>
-            <div class="progress-container">
-              <div class="progress-bar">
-                <span class="progress-label">25%</span>
-              </div>
-            </div>
-          </div>
-          <div class="mahasiswa-item">
-            <div class="profile">
-              <div class="profile-icon">
-                <img src="./img/profile.jpg" alt="Profile Icon" />
-              </div>
-              <span class="name">Muhammad Imam</span>
-            </div>
-            <div class="progress-container">
-              <div class="progress-bar">
-                <span class="progress-label">25%</span>
-              </div>
-            </div>
-          </div>
+        <span class="name">Muhammad Imam</span>
+      </div>
+      <div class="progress-container">
+        <div class="progress-bar">
+          <span class="progress-label">25%</span>
         </div>
       </div>
+    </div>
+    <div class="mahasiswa-item">
+      <div class="profile">
+        <div class="profile-icon">
+          <img src="./img/profile.jpg" alt="Profile Icon" />
+        </div>
+        <span class="name">Muhammad Imam</span>
+      </div>
+      <div class="progress-container">
+        <div class="progress-bar">
+          <span class="progress-label">25%</span>
+        </div>
+      </div>
+    </div>
+    <div class="mahasiswa-item">
+      <div class="profile">
+        <div class="profile-icon">
+          <img src="./img/profile.jpg" alt="Profile Icon" />
+        </div>
+        <span class="name">Muhammad Imam</span>
+      </div>
+      <div class="progress-container">
+        <div class="progress-bar">
+          <span class="progress-label">25%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
