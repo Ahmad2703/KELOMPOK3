@@ -21,6 +21,22 @@ def forum_view(request):
     courses = Course.objects.all()
     return render(request, 'cd_app/forum.html', {'courses': courses})
 
+def task_view(request):
+    courses = Course.objects.all()
+    return render(request, 'cd_app/task.html', {'courses': courses})
+
+def presence_view(request):
+    courses = Course.objects.all()
+    return render(request, 'cd_app/presence.html', {'courses': courses})
+
+def recap_view(request):
+    courses = Course.objects.all()
+    return render(request, 'cd_app/recap_values.html', {'courses': courses})
+
+def list_view(request):
+    courses = Course.objects.all()
+    return render(request, 'cd_app/list_mahasiswa.html', {'courses': courses})
+
 @login_required
 def logout_view(request):
     logout(request)
