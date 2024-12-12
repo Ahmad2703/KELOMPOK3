@@ -1,0 +1,78 @@
+{% extends "cd_app/class.html" %}
+{% load static %}
+
+{% block body_block %}
+
+<div class="container-detail-class">
+    <div class="bg-img-detail-class p-4" style="background-image: url('{% static 'img/bg-image-class.jpg' %}');">
+        <div class="title-detail-class">
+          <h4>MANAGEMENT PROJECT</h4>
+          <p>[M] Kamis, 17:00 - 19:30</p>
+        </div>
+      </div>
+      
+    <div class="wrap-fill-detail-class">
+      <div class="row mt-4">
+        <div class="col-lg-3">
+          <div class="wrap-task">
+            <div class="title-task" style="border-bottom: none">
+              <h4>Tugas Aktif</h4>
+              <a href="task.html">Lihat Semuanya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="form-announcement">
+            <div class="fill-announcement">
+              <div class="img-profile-top"></div>
+              <div class="input-form">
+                <input
+                  type="text"
+                  class="input-text"
+                  placeholder="Umumkan sesuatu ke kelas Anda"
+                  style="border: none; outline: none"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-9 mt-4">
+          <div
+            class="form-comment"
+            style="border-bottom: 1px solid rgb(185, 185, 185)">
+            <div class="wrap-comment">
+              <div class="img-profile"></div>
+              <div class="detail-profile">
+                <div class="username">
+                  <p>Isa Albanna</p>
+                  <p>13 November 2024 20.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="fill-comment">
+              <p>
+                kepada seluruh pelajar, untuk segera bergabung di Telegram
+                Group pada tautan berikut:
+              </p>
+            </div>
+          </div>
+          <div class="form-comment" style="border-radius: 0">
+            <div class="fill-announcement responsif-form">
+              <div class="img-profile-button mb-4"></div>
+              <div class="input-form">
+                <input
+                  type="text"
+                  class="input-text"
+                  placeholder="Tambahkan Komentar kelas"/>
+                <button class="send-btn">
+                  <i class="fa-solid fa-share" style="color: white"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

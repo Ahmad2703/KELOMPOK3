@@ -1,0 +1,130 @@
+{% extends "cd_app/base.html" %}
+{% load static %}
+
+{% block body_block %}
+<main class="mt-5 pt-5">
+  <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between">
+    <section class="image-container mb-4 mb-lg-0">
+      <img src="{% static 'img/learn.png' %}" alt="Success Image" class="img-fluid">
+    </section>
+    
+    <section class="content text-center text-lg-end">
+      <aside class="offer">SPECIAL OFFER FIRST CUSTOMER</aside>
+      <h2 class="main-heading">Your <span style="color: red;">success</span> journey starts with us!</h2>
+      <p>
+        Eduplan Education Can Fulfil Your International Education Dream As Per Your Best Fit with world top
+        universities and colleges.
+      </p>
+      <a class="btn btn-custom" href="{% url 'cd_app:login' %}">LOGIN</a>
+    </section>
+  </div>
+  <section id="panduan">
+    <div class="container my-5">
+      <div class="row">
+        <h2 class="main-heading" style="text-align: center; font-family: 'Roboto', sans-serif; font-weight: 400;">
+          PANDUAN UNTUK USER
+        </h2>
+        <!-- Panduan Dosen -->
+        <div class="col-md-3">
+          <div class="card">
+            <img src="{% static 'img/dosen.jpg' %}" alt="Dosen" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Panduan Dosen</h5>
+              <p>Panduan penggunaan aplikasi untuk Dosen</p>
+              <a href="#" class="btn btn-outline-secondary">Read More</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Panduan Mahasiswa -->
+        <div class="col-md-3">
+          <div class="card">
+            <img src="{% static 'img/mahasiswa.jpg' %}" alt="Mahasiswa" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Panduan Mahasiswa</h5>
+              <p>Panduan penggunaan aplikasi untuk Mahasiswa</p>
+              <a href="#" class="btn btn-outline-secondary">Read More</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Panduan Staf -->
+        <div class="col-md-3">
+          <div class="card">
+            <img src="{% static 'img/staf.jpg' %}" alt="Staf Prodi" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Panduan Staf Prodi</h5>
+              <p>Panduan penggunaan aplikasi untuk Staf Prodi</p>
+              <a href="#" class="btn btn-outline-secondary">Read More</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Contact Us -->
+        <div class="col-md-3">
+          <div class="card">
+            <img src="{% static 'img/contactus.jpg' %}" alt="Contact Us" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Contact Us</h5>
+              <p>Ahmad Damiri<br>M. Thoriq</p>
+              <a href="#" class="btn btn-outline-secondary">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tentangkami">
+    <div class="container my-5">
+      <div class="row">
+        <h2 class="main-heading" style="text-align: center; font-family: 'Roboto',  sans-serif; font-weight: 400;">
+          TENTANG KAMI
+        </h2>
+        <div class="col-md-6">
+          <div class="card">
+            <h3 style="font-weight: bold;">Visi</h3>
+            <p class="text-justify">Visi kami adalah menciptakan ekosistem pembelajaran digital yang inklusif dan
+              berkelanjutan, di mana setiap individu, tanpa memandang latar belakang, memiliki kesempatan untuk
+              mengakses pendidikan berkualitas tinggi.</p>
+            <p>Kami berkomitmen untuk mengembangkan inovasi dalam metode
+              pengajaran, teknologi, dan kurikulum, memastikan bahwa setiap peserta didik dilengkapi dengan keterampilan
+              yang relevan dan praktis untuk menghadapi tantangan di dunia yang terus berubah.</p>
+            <a href="#" class="btn btn-outline-primary">Pelajari Visi Kami</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <h3 style="font-weight: bold;">Misi</h3>
+            <p class="text-justify">Misi kami adalah menyediakan platform pembelajaran yang mudah diakses dan
+              terjangkau, memungkinkan setiap individu untuk mengembangkan keterampilan digital yang relevan dengan
+              kebutuhan industri saat ini. </p>
+            <p>Kami berkomitmen untuk menawarkan kursus yang berkualitas, didukung oleh
+              pengajaran yang interaktif dan sumber daya terbaru, agar peserta dapat belajar dengan cara yang
+              menyenangkan dan efektif.</p>
+            <a href="#" class="btn btn-outline-primary">Pelajari Misi Kami</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <h3 style="font-weight: bold;">Tim Kami</h3>
+            <p>Tim pengajar kami terdiri dari para ahli yang berpengalaman di bidangnya, siap mendukung Anda dalam
+              perjalanan belajar.</p>
+            <a href="#" class="btn btn-outline-primary">Kenali Tim Kami</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <h3 style="font-weight: bold;">Bergabunglah dengan Kami</h3>
+            <p>Jadilah bagian dari komunitas kami dan raih potensi terbaik Anda melalui berbagai kursus yang kami
+              tawarkan.</p>
+            <a href="#" class="btn btn-outline-primary">Bergabung Sekarang</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</main>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "cd_app/main.html" %}
+{% load static %}
+
+{% block body_block %}
+<!-- Main -->
+<div class="container-class">
+    <div class="title-wrap-class">
+      <h1 style="font-weight: bold;">Anda Memiliki {{courses|length}} Mata Kuliah</h1>
+    </div>
+    <div class="des-class">
+      <p>
+        We have professional alliance's with leading Universities and
+        Colleges around the word
+      </p>
+    </div>
+    <div class="wrap-card-class">
+        <div class="row">
+          {% for course in courses %}
+          <div class="col-lg-3 mb-4 col-md-6">
+            <div class="card-class">
+            <div class="image-card-class" style="background-image: url('{% static 'img/bg-image-class.jpg' %}');"></div>
+              <div class="wrap-fill-card">
+                <div class="title-card-class mt-2">
+                  <h4 style="font-weight: bold;">{{ course.teacher }}</h4>
+                </div>
+                <div class="des-card-class">
+                  <p>{{ course.name }}</p>
+                </div>
+                <div class="time-card-class">
+                  <p>{{ course.schedule }}</p>
+                </div>
+                <div class="open-card-class">
+                  <div class="icon">
+                    <a href="{% url 'cd_app:forum' %}"><i class="fa-solid fa-play"></i></a>
+                  </div>
+                  <div class="class">
+                    <p>Pergi Ke Kelas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+  </div>
+{% endblock %}

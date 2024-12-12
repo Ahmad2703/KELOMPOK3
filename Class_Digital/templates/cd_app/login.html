@@ -1,0 +1,36 @@
+{% extends "cd_app/base.html" %}
+{% load static %}
+
+{% block body_block %}
+    <!-- Jumbotron untuk Login -->
+    <div class="jumbotron-login">
+        <h1 class="display-5 text-center">LOGIN</h1>
+        <p class="lead text-center">Silakan Masuk ke Akun Anda</p>
+        <p style="font-size: small; text-align: center;">
+            Belum memiliki akun? <a href="{% url 'cd_app:signup' %}">Signup di sini</a>
+        </p>
+        <hr class="my-4">
+
+        <!-- Form untuk Login -->
+        <form id="loginForm" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">👤Username</label>
+                <input type="text" class="form-control" name="username" id="loginusername" placeholder="Masukkan Username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">🔒Password</label>
+                <input type="password" class="form-control" name="password" id="loginpassword" placeholder="Masukkan Password" required>
+            </div>
+            <button type="submit" class="btn btn-custom w-100">LOGIN</button>
+        </form>        
+    </div>
+
+    {% if messages %}
+        <div class="alert alert-danger">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

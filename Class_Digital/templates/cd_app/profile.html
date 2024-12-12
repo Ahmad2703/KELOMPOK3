@@ -1,0 +1,39 @@
+{% extends "cd_app/main.html" %}
+{% load static %}
+
+{% block body_block %}
+        <!-- Main -->
+        <div class="main p-3">
+            <!-- Bagian Profile -->
+            <div class="profile mt-4">
+                <h2>Profile Saya</h2>
+                <img id="profileImage" src="{% static 'img/Minion.jpg' %}" alt="Foto Profil" class="img-fluid rounded-circle mb-3"
+                    width="150">
+                <p class="img-description"> Klik pada gambar untuk mengubah foto </p>
+                <input type="file" class="d-none" id="imageUpload" accept="image/*">
+                <!-- Form Profile-->
+                <form id="profileForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label"><strong>Nama:</strong></label>
+                        <input type="text" class="form-control" id="name" value="{{ user.username }}" placeholder="Masukkan nama Anda">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label"><strong>Email:</strong></label>
+                        <input type="email" class="form-control" id="email" value="{{ user.email }}" placeholder="Masukkan email Anda">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label"><strong>Telepon:</strong></label>
+                        <input type="tel" class="form-control" id="phone" value="{{ user.phone }}" placeholder="Masukkan nomor telepon Anda"
+                            pattern="[0-9]{10,15}" title="Masukkan nomor telepon yang valid (10-15 digit)" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="about" class="form-label"><strong>Tentang Saya:</strong></label>
+                        <textarea class="form-control" id="about" rows="3" placeholder="Ceritakan tentang diri Anda">{{ user.about }}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-custom">SIMPAN</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}

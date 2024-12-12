@@ -1,0 +1,552 @@
+/* Universal reset dan font setting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Setting body agar background memenuhi layar */
+body {
+    background: linear-gradient(to bottom right, #f7d6de, #d5e7ee, #7391a8);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+/*Styling Footer*/
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+    position: static;
+    bottom: 0;
+    display: flex;
+    text-align: center;
+}
+
+/* Styling container dan image */
+.container {
+    display: flex;
+    align-items: center;
+    /* Konten berada di tengah vertikal */
+    justify-content: space-between;
+    /* Jarak antara gambar dan teks */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.image-container {
+    flex: 1;
+    /* Mengambil satu bagian dari ruang yang tersedia */
+    max-width: 50%;
+    /* Batasi lebar gambar */
+}
+
+.image-container img {
+    width: 100%;
+    /* Gambar menyesuaikan dengan lebar container */
+    height: auto;
+    /* Menjaga proporsi gambar */
+}
+
+.btn-outline-primary:hover {
+    background-color: #5549cc !important;
+    border-color: #5549cc !important;
+    color: white !important;
+}
+
+/* Styling navbar */
+nav {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.navbar {
+    background: linear-gradient(to right, #d5e7ee, #decbe4);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav {
+    font-size: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 15px;
+    /* Memberi jarak kiri dan kanan item */
+}
+
+/* Styling logo */
+#logo-Text {
+    font-family: 'Brush Script MT', cursive;
+    font-weight: bold;
+    font-size: 35px;
+    color: #4b4cfe;
+}
+
+/*Styling form Login */
+body.login-page {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn-custom {
+    background-color: #6f63f2 !important;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: auto;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #5549cc !important;
+}
+
+.jumbotron-login {
+    background: white;
+    margin-top: 50px;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.navbar {
+    padding: 10px;
+}
+
+#logo-Text-home {
+    font-family: 'Brush Script MT', cursive;
+    font-weight: bold;
+    font-size: 35px;
+    color: #4b4cfe;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    position: fixed;
+}
+
+/*Styling form signup */
+body.signup-page {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.jumbotron-signup {
+    background: white;
+    margin-top: 110px;
+    margin-bottom: 40px;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.btn-light:hover {
+    background-color: whitesmoke !important;
+    color: black !important;
+    border-color: #f7d6de !important;
+}
+
+/* Styling Sidebar */
+.navbar .d-flex {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+    display: flex;
+
+
+}
+
+#sidebar {
+    margin-right: 3rem;
+    min-height: 100vh; 
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all 0.25s ease-in-out;
+    background-color: #0e2238;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #FFF;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i {
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .075);
+    border-left: 3px solid #3b7ddd;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #0e2238;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+}
+
+/* Left column */
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+/* Card */
+.card {
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+
+/* Index Styling */
+.offer {
+    font-size: 22px;
+    color: #4b4cfe;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.main-heading {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.content {
+    max-width: 600px;
+    text-align: right;
+}
+
+/*Styling Profile*/
+.profile {
+    /* Pakai background & box shadow:
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.profile img {
+    display: block;
+    margin: 0 auto;
+}
+
+.img-description {
+    text-align: center;
+    font-style: italic;
+    color: gray;
+    font-size: 0.8em;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+/* Gaya untuk animasi */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/*Styling footer home*/
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: justify;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links {
+    padding: 0;
+}
+
+.container-class {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.title-wrap-class h1{
+    font-weight: 600;
+}
+
+.image-card-class {
+    border-radius: 20px 20px 0 0;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-class {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    background: white;
+}
+
+.wrap-card-class{
+    margin-top: 3rem;
+}
+
+.open-card-class .icon {
+    font-size: 24px;
+    color: #6c63ff;
+}
+
+.open-card-class .class {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.container-detail-class{
+    margin-left: 4rem;
+    width: 80%;
+    /* background-color: #000; */
+    margin-top: 6rem;
+    padding-bottom: 2rem;
+}
+.title-detail-class{
+    margin-top: 5rem;
+    color: white;
+}
+.wrap-task{
+    height: 120px;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: white;
+}
+.title-task h4{
+    font-weight: 500;
+}
+.title-task a{
+    color: #3412F6;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.form-announcement{
+    height: 120px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: white;
+    padding: 2rem;
+}
+.fill-announcement{
+    margin-top: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.input-form {
+    display: flex; /* Mengatur elemen input dan tombol dalam satu baris */
+    align-items: center;
+    gap: 10px; /* Jarak antar elemen */
+    width: 100%;
+}
+.input-text {
+    flex: 1; /* Input mengambil sisa ruang */
+    border: 1px solid rgb(192, 192, 192);
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box; /* Memastikan padding dihitung dalam lebar */
+}
+.send-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4b4cfe; /* Warna tombol */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+.send-btn img {
+   width: 20px; /* Ukuran ikon */
+   height: 20px;
+   filter: invert(1); /* Membuat ikon putih jika warna tombol gelap */
+}
+  
+.form-comment{
+  
+    border-radius: 10px 10px 0 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: white;
+    padding: 2rem;
+    
+}
+.wrap-comment{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+.username{
+    line-height: 5px;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    
+    color: #949494;
+}
+.fill-comment{
+    color: #797979;
+    margin-top: 1rem;
+}
