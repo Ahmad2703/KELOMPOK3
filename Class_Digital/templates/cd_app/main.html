@@ -16,7 +16,9 @@
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet" />
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -28,69 +30,71 @@
                     <i class="lni lni-menu"></i>
                 </button>
                 <div class="sidebar-logo">
-                    <a href="{% url 'cd_app:dashboard' %}">Dashboard</a>
+                    <a href="{% url 'cd_app:dashboard' %}" style="text-decoration: none;">Dashboard</a>
                 </div>
             </div>
             <nav class="nav navbar-expand-lg bg-transparent">
                 <div class="container-fluid mx-5">
                     <div class="ms-auto">
-                        <a class="navbar-brand" id="logo-Text-home" href="{% url 'cd_app:dashboard' %}">Class Digital</a>
+                        <a class="navbar-brand" id="logo-Text-home" href="{% url 'cd_app:dashboard' %}">Class
+                            Digital</a>
                     </div>
                 </div>
             </nav>
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
-                    <a href="{% url 'cd_app:dashboard' %}" class="sidebar-link">
+                    <a href="{% url 'cd_app:dashboard' %}" class="sidebar-link" style="text-decoration: none;">
                         <i class="lni lni-home"></i>
                         <span>Home</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="{% url 'cd_app:profile' %}" class="sidebar-link">
+                    <a href="{% url 'cd_app:profile' %}" class="sidebar-link" style="text-decoration: none;">
                         <i class="lni lni-user"></i>
                         <span>Profile</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="{% url 'cd_app:calendar' %}" class="sidebar-link">
+                    <a href="{% url 'cd_app:calendar' %}" class="sidebar-link" style="text-decoration: none;">
                         <i class="lni lni-calendar"></i>
-                    <span>Calendar</span>
+                        <span>Calendar</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                        data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
+                        data-bs-target="#multi" aria-expanded="false" aria-controls="multi" style="text-decoration: none;">
                         <i class="lni lni-book"></i>
                         <span>Class</span>
                     </a>
                     <ul id="multi" class="sidebar-dropdown list-unstyled collapse">
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Class 1</a>
+                            <a href="#" class="sidebar-link" style="text-decoration: none;">Class 1</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">Class 2</a>
+                            <a href="#" class="sidebar-link" style="text-decoration: none;">Class 2</a>
                         </li>
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="#" class="sidebar-link"style="text-decoration: none;">
                         <i class="lni lni-popup"></i>
                         <span>Notification</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="#" class="sidebar-link"style="text-decoration: none;">
                         <i class="lni lni-cog"></i>
                         <span>Setting</span>
                     </a>
                 </li>
             </ul>
             <div class="sidebar-footer">
-                <a href="{% url 'logout' %}" class="sidebar-link" onclick="return confirm('Apakah Anda yakin ingin logout?');">
+                <a href="{% url 'logout' %}" class="sidebar-link"
+                    onclick="return confirm('Apakah Anda yakin ingin logout?');"style="text-decoration: none;">
                     <i class="lni lni-exit"></i>
                     <span>Logout</span>
                 </a>
-            </div>            
+            </div>
         </aside>
         <!-- Main Content -->
         <div class="container my-5">
@@ -98,6 +102,19 @@
             {% endblock %}
         </div>
     </div>
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('.toggle-btn').on('click', function () {
+                $('#sidebar').toggleClass('expand');
+            });
+            $(".has-dropdown").click(function (e) {
+                e.preventDefault();
+                $(this).next(".sidebar-dropdown").slideToggle(300);
+            });
+        });
+    </script>
 </body>
+
 </html>
