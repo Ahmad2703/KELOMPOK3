@@ -11,5 +11,9 @@ urlpatterns = [
     path('profile/', views.edit_profile, name='profile'),
     path('forum/', views.forum_view, name='forum'),
     path('calendar/', views.calendar_view, name='calendar'),
+    path('task/', views.task_view, name='task'),
+    path('presence/', views.presence_view, name='presence'),
+    path('recap/', views.recap_view, name='recap'),
+    path('list/', views.list_view, name='list'),
     path('logout/', views.logout_view, name='logout'),
 ]
