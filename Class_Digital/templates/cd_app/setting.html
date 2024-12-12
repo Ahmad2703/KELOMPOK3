@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifikasi Pengaturan</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        /* Reset beberapa margin dan padding agar tampilan lebih konsisten */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Styling umum untuk body */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #d5e7ee, #decbe4);
+            padding-top: 50px;
+        }
+
+        /* Kontainer utama */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Judul halaman */
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Deskripsi bawah judul */
+        p {
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Styling untuk card */
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            background-color: white;
+        }
+
+        /* Header card */
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Body card */
+        .card-body {
+            padding: 20px;
+        }
+
+        /* Form check untuk input checkbox */
+        .form-check {
+            margin-bottom: 15px;
+        }
+
+        /* Label untuk checkbox */
+        .form-check-label {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Input checkbox */
+        .form-check-input {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        /* Styling untuk teks kecil (small) */
+        small {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Tombol Simpan Pengaturan */
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Efek hover pada tombol */
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        /* Styling responsif untuk perangkat dengan ukuran layar kecil */
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .card-header {
+                font-size: 18px;
+
+            }
+
+            .form-check-label {
+                font-size: 14px;
+            }
+
+            .btn-primary {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Pengaturan Notifikasi</h1>
+        <p class="text-center mb-4">Atur jenis notifikasi yang ingin Anda terima melalui email dan aplikasi.</p>
+        
+        <!-- Notifikasi Email -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Notifikasi Email</h4>
+            </div>
+            <div class="card-body">
+                <!-- Checkbox untuk Izinkan Notifikasi Email -->
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="email-notifications" checked>
+                    <label class="form-check-label" for="email-notifications">
+                        Izinkan notifikasi melalui email
+                    </label>
+                    <p><small>Setelan ini berlaku untuk notifikasi yang diterima melalui email. <a href="#">Pelajari lebih lanjut</a></small></p>
+                </div>
+                
+                <!-- Komentar -->
+                <h5 class="mb-3">Jenis Komentar</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="comment-posts" checked>
+                    <label class="form-check-label" for="comment-posts">
+                        Komentar di postingan Anda
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="mentioned-comments" checked>
+                    <label class="form-check-label" for="mentioned-comments">
+                        Komentar yang menyebutkan Anda
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="private-comments">
+                    <label class="form-check-label" for="private-comments">
+                        Komentar pribadi di tugas
+                    </label>
+                </div>
+
+                <!-- Notifikasi Tugas -->
+                <h5 class="mt-4 mb-3">Notifikasi Tugas</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="late-assignments">
+                    <label class="form-check-label" for="late-assignments">
+                        Pengumpulan terlambat tugas siswa
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="resubmission-assignments">
+                    <label class="form-check-label" for="resubmission-assignments">
+                        Pengumpulan kembali tugas siswa
+                    </label>
+                </div>
+
+                <!-- Undangan Mengajar -->
+                <h5 class="mt-4 mb-3">Undangan Mengajar</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="teaching-invites">
+                    <label class="form-check-label" for="teaching-invites">
+                        Undangan untuk mengajar kelas bersama
+                    </label>
+                </div>
+
+                <!-- Notifikasi Postingan -->
+                <h5 class="mt-4 mb-3">Notifikasi Postingan</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="scheduled-posts">
+                    <label class="form-check-label" for="scheduled-posts">
+                        Postingan terjadwal dipublikasikan atau gagal
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Notifikasi Kelas -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Notifikasi Kelas</h4>
+            </div>
+            <div class="card-body">
+                <p>Setelan ini berlaku untuk email dan notifikasi perangkat Anda untuk setiap kelas yang Anda ajar.</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="class-notifications" checked>
+                    <label class="form-check-label" for="class-notifications">
+                        Izinkan notifikasi kelas melalui email dan perangkat
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tombol Simpan Pengaturan -->
+        <div class="text-center">
+            <button class="btn btn-primary">Simpan Pengaturan</button>
+        </div>
+    </div>
+
+    <!-- Menghubungkan file jQuery eksternal -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="jQuery.js"></script>
+
+</body>
+
+</html>
