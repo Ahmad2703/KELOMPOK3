@@ -2,6 +2,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from . models import UserProfileInfo
+from .models import Comment
 
 class SignupForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput, label='Password')
@@ -23,3 +24,14 @@ class UserProfileInfoForm(forms.ModelForm):
     class Meta:
         model = UserProfileInfo
         fields = ['name', 'image', 'email', 'phone', 'about']
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
+        widgets = {
+            'content': forms.TextInput(attrs={
+                'class': 'input-text',
+                'placeholder': 'Tambahkan Komentar kelas',
+            }),
+        }

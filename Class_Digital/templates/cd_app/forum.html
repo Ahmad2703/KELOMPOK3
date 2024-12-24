@@ -4,75 +4,162 @@
 {% block body_block %}
 
 <div class="container-detail-class">
+    <!-- Bagian Header -->
     <div class="bg-img-detail-class p-4" style="background-image: url('{% static 'img/bg-image-class.jpg' %}');">
         <div class="title-detail-class">
-          <h4>MANAGEMENT PROJECT</h4>
-          <p>[M] Kamis, 17:00 - 19:30</p>
+          <h4>{{ course.name }}</h4>
+          <p>{{ course.teacher.name }}</p>
+          <p>{{ course.schedule }}</p>
         </div>
-      </div>
+    </div>
       
     <div class="wrap-fill-detail-class">
       <div class="row mt-4">
+        <!-- Bagian Tugas Aktif -->
         <div class="col-lg-3">
           <div class="wrap-task">
             <div class="title-task" style="border-bottom: none">
               <h4>Tugas Aktif</h4>
-              <a href="task.html">Lihat Semuanya</a>
+              <a href="{% url 'cd_app:task' course_id=course.id %}">Lihat Semuanya</a>
             </div>
           </div>
         </div>
+
+        <!-- Bagian Pengumuman -->
         <div class="col-lg-9">
           <div class="form-announcement">
             <div class="fill-announcement">
-              <div class="img-profile-top"></div>
-              <div class="input-form">
-                <input
-                  type="text"
-                  class="input-text"
-                  placeholder="Umumkan sesuatu ke kelas Anda"
-                  style="border: none; outline: none"/>
-              </div>
+              {% if is_teacher %}
+                <!-- Jika teacher, tampilkan form pengumuman -->
+                <form method="post" class="d-flex flex-column position-relative" style="width: 100%;">
+                  {% csrf_token %}       
+                  <!-- Menampilkan foto profil dan nama pengajar -->
+                  <div class="d-flex align-items-center mb-2" style="margin:-10px">
+                    <div class="img-profile-top me-3">
+                      {% if course.teacher.image %}
+                        <img src="{{ course.teacher.image.url }}" alt="Profile Icon" style="width: 40px; height: 40px; border-radius: 50%;" />
+                      {% else %}
+                        <img src="{% static 'img/profile.jpg' %}" alt="Default Profile Icon" style="width: 50px; height: 50px; border-radius: 50%;" />
+                      {% endif %}
+                    </div>
+                    <div class="ms-1">
+                      <strong>{{ course.teacher.name }}</strong> <!-- Menampilkan nama pengajar -->
+                    </div>
+                  </div>
+                  
+                  <div class="position-relative">
+                    <input
+                      type="text"
+                      name="announcement"
+                      class="input-text form-control mb-3"
+                      placeholder="Diharapkan para mahasiswa mengumpulkan tugasnya segera"
+                      value="{{ course.announcement }}"
+                      style="border: none; outline: none; width: 105%; height: 20px; padding:0px 60px"/>
+                
+                    <!-- Tombol Simpan di sebelah kanan bawah -->
+                    <button type="submit" class="btn btn-custom btn-sm" style="position: absolute; right: 0; bottom: -40px; padding: 5px 15px;">Simpan</button>
+                  </div>
+                </form>
+                
+                
+              {% else %}
+                <!-- Jika bukan teacher, hanya tampilkan teks pengumuman -->
+                <div class="d-flex align-items-start">
+                  <!-- Foto Profil -->
+                  <div class="img-profile-top me-3">
+                    {% if course.teacher.image %}
+                      <img src="{{ course.teacher.image.url }}" alt="Profile Icon" style="width: 50px; height: 50px; border-radius: 50%;" />
+                    {% else %}
+                      <img src="{% static 'img/profile.jpg' %}" alt="Default Profile Icon" style="width: 50px; height: 50px; border-radius: 50%;" />
+                    {% endif %}
+                  </div>
+                
+                  <!-- Nama Pengajar dan Pengumuman -->
+                  <div>
+                    <div class="d-flex flex-column">
+                      <!-- Nama Pengajar -->
+                      <strong>{{ course.teacher.name }}</strong>
+                    </div>
+                
+                    <!-- Pengumuman -->
+                    <p>{{ course.announcement }}</p>
+                  </div>
+                </div>                
+              {% endif %}
+
             </div>
           </div>
         </div>
-        <div class="col-lg-3"></div>
+        
         <div class="col-lg-9 mt-4">
-          <div
-            class="form-comment"
-            style="border-bottom: 1px solid rgb(185, 185, 185)">
+          <!-- Daftar Komentar -->
+          {% for comment in comments %}
+          <div class="form-comment" style="border-bottom: 1px solid rgb(185, 185, 185);">
             <div class="wrap-comment">
-              <div class="img-profile"></div>
+              <div class="img-profile">
+                {% if comment.user.image %}
+                  <img src="{{ comment.user.image.url }}" alt="Profile Icon" style="width: 50px; height: 50px;" />
+                {% else %}
+                  <img src="{% static 'img/profile.jpg' %}" alt="Default Profile Icon" style="width: 50px; height: 50px;" />
+                {% endif %}
+              </div>
               <div class="detail-profile">
                 <div class="username">
-                  <p>Isa Albanna</p>
-                  <p>13 November 2024 20.00</p>
+                  <p>{{ comment.user.name }}</p>
+                  <p>{{ comment.created_at|date:"d M Y H:i" }}</p>
                 </div>
               </div>
             </div>
             <div class="fill-comment">
-              <p>
-                kepada seluruh pelajar, untuk segera bergabung di Telegram
-                Group pada tautan berikut:
-              </p>
+              <p>{{ comment.content }}</p>
+
+              {% if comment.user == request.user.userprofileinfo or request.user.is_staff %}
+              <div class="d-flex justify-content-end">              
+                <!-- Form Hapus -->
+                <form method="post" style="display: inline;">
+                  {% csrf_token %}
+                  <input type="hidden" name="delete_comment" value="true">
+                  <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                  <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                </form>
+              </div>
+              {% endif %}
             </div>
           </div>
-          <div class="form-comment" style="border-radius: 0">
+          {% endfor %}
+        
+          <!-- Form Tambah Komentar -->
+          <form method="post" class="form-comment" style="border-radius: 0;">
+            {% csrf_token %}
             <div class="fill-announcement responsif-form">
-              <div class="img-profile-button mb-4"></div>
+              <div class="img-profile-button mb-4">
+                {% if user.profile.image %}
+                <img src="{{ user.profile.image.url }}" alt="Profile Icon" style="width: 50px; height: 50px;" />
+                {% else %}
+                <img src="{% static 'img/profile.jpg' %}" alt="Default Profile Icon" style="width: 50px; height: 50px;" />
+                {% endif %}
+              </div>
               <div class="input-form">
-                <input
-                  type="text"
-                  class="input-text"
-                  placeholder="Tambahkan Komentar kelas"/>
-                <button class="send-btn">
+                {{ form.content }}
+                <button type="submit" class="send-btn">
                   <i class="fa-solid fa-share" style="color: white"></i>
                 </button>
               </div>
             </div>
-          </div>
-        </div>
+          </form>
+        </div>        
       </div>
     </div>
-  </div>
+</div>
+
+<script>
+  document.querySelectorAll('form[action*="delete"]').forEach(form => {
+    form.addEventListener('submit', function(event) {
+      if (!confirm("Apakah Anda yakin ingin menghapus komentar ini?")) {
+        event.preventDefault();
+      }
+    });
+  });
+</script>
 
 {% endblock %}

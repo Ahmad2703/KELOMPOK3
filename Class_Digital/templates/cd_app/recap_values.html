@@ -2,15 +2,14 @@
 {% load static %}
 
 {% block body_block %}
-
 <head>
   <style>
     /* styling recap-values */
     .container-recap-values {
-      margin-left: 4rem;
-      width: 80%;
+      margin-left: 2rem;
+      width: 90%;
       /* background-color: #000; */
-      margin-top: 6rem;
+      margin-top: 1rem;
       padding-bottom: 2rem;
     }
 
@@ -46,30 +45,106 @@
       font-style: italic;
       font-size: 16px;
     }
+    .title-task h1{
+      color: #3412F6;
+      font-weight: 600;
+    }
+    .title-task{
+        border-bottom: 1px solid #3412F6;
+        padding-bottom: 1rem;
+    }
+
+    #download-csv {
+      padding: 10px 20px;
+      background-color: #3412F6;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem; /* Memberikan jarak di atas tombol */
+      font-weight: 500;
+      font-size: 16px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    #download-csv:hover {
+      background-color: #1c0fb0;
+    }
   </style>
 </head>
-<!-- Main -->
-<div class="container-recap-values">
-  <div class="title-task">
-    <h1>Rekapitulasi Nilai</h1>
-  </div>
-  <div class="wrap-list-values">
-    <table class="recap-table">
-      <thead>
-        <tr>
-          <th>NO.</th>
-          <th>JENIS</th>
-          <th>JUDUL TUGAS</th>
-          <th>NILAI</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="4" class="no-data">TIDAK ADA</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-</div>
+      <!-- Main -->
+      <div class="container-recap-values">
+        <div class="title-task">
+          <h1>Rekapitulasi Nilai</h1>
+        </div>
+        <div class="wrap-list-values">
+          <table class="recap-table">
+            <thead>
+              <tr>
+                <th>NO.</th>
+                <th>JENIS</th>
+                <th>JUDUL TUGAS</th>
+                <th>NILAI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Tugas Harian</td>
+                <td>Inisiasi Proyek</td>
+                <td>85</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Praktikum</td>
+                <td>Diskusi Kelompok</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Ujian</td>
+                <td>Mid Semester</td>
+                <td>88</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Tugas Harian</td>
+                <td>Mengaplikasikan Proyek</td>
+                <td>80</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Tugas Akhir</td>
+                <td>Final Projek</td>
+                <td>85</td>
+              </tr>
+            </tbody>
+          </table>
+          <button id="download-csv" onclick="downloadCSV()" type="submit" class="btn btn-custom">Download Hasil</button>
+        </div>
+      </div>
+      
+      <script>
+        function downloadCSV() {
+          const data = [
+            ["NO.", "JENIS", "JUDUL TUGAS", "NILAI"],
+            [1, "Tugas Harian", "Matematika Bab 1", 85],
+            [2, "Proyek", "Eksperimen Sains", 90],
+            [3, "Ujian", "Mid Semester", 88],
+          ];
+        
+          let csvContent = "data:text/csv;charset=utf-8,"
+            + data.map(row => row.join(",")).join("\n");
+        
+          const encodedUri = encodeURI(csvContent);
+          const link = document.createElement("a");
+          link.setAttribute("href", encodedUri);
+          link.setAttribute("download", "rekap_nilai.csv");
+          document.body.appendChild(link);
+        
+          link.click();
+          document.body.removeChild(link);
+        }        
+      </script>
+    
 {% endblock %}

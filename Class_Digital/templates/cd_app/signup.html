@@ -3,48 +3,52 @@
 
 {% block body_block %}
     <!-- Jumbotron untuk Signup -->
-    <div class="jumbotron-signup">
-        <h1 class="display-5 text-center">SIGNUP</h1>
-        <p class="lead text-center">Silakan Buat Akun Anda</p>
-        <p style="font-size: small; text-align: center;">
-            Sudah memiliki akun? <a href="{% url 'cd_app:login' %}">Login di sini</a>
-        </p>
-        <hr class="my-4">
-
-        <!-- Form untuk Signup -->
-        <form id="signupForm" method="POST">
-            {% csrf_token %}
-            <div class="mb-3">
-                <label for="username" class="form-label">👤 Username</label>
-                <input type="text" class="form-control" name="username" id="signupusername" 
-                       value="{{ user_form.username.value|default:'' }}" 
-                       placeholder="Masukkan Username" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">📧 Email</label>
-                <input type="email" class="form-control" name="email" id="signupemail" 
-                       value="{{ user_form.email.value|default:'' }}" 
-                       placeholder="Masukkan Email" required>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">🔒 Password</label>
-                <input type="password" class="form-control" name="password" id="signuppassword" 
-                       placeholder="Buat Password" required>
-            </div>
-            <div class="mb-3">
-                <label for="confirm_password" class="form-label">🔒 Confirm Password</label>
-                <input type="password" class="form-control" name="confirm_password" id="signupconfirm_password" 
-                       placeholder="Ulangi Password" required>
-            </div>
-            <button type="submit" class="btn btn-custom w-100">SIGNUP</button>
-        </form>
-    </div>
-    <!-- Menampilkan Pesan -->
-    {% if messages %}
-        <div class="alert alert-danger mt-3">
-            {% for message in messages %}
-                <p>{{ message }}</p>
-            {% endfor %}
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
+        <div class="jumbotron-signup bg-white p-4 rounded shadow">
+            <h1 class="display-5 text-center">SIGNUP</h1>
+            <p class="lead text-center">Silakan Buat Akun Anda</p>
+            <p style="font-size: small; text-align: center;">
+                Sudah memiliki akun? <a href="{% url 'cd_app:login' %}">Login di sini</a>
+            </p>
+            <hr class="my-4">
+    
+            <!-- Form untuk Signup -->
+            <form id="signupForm" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="form-label">👤 Username</label>
+                    <input type="text" class="form-control" name="username" id="signupusername" 
+                        value="{{ user_form.username.value|default:'' }}" 
+                        placeholder="Masukkan Username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">📧 Email</label>
+                    <input type="email" class="form-control" name="email" id="signupemail" 
+                        value="{{ user_form.email.value|default:'' }}" 
+                        placeholder="Masukkan Email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">🔒 Password</label>
+                    <input type="password" class="form-control" name="password" id="signuppassword" 
+                        placeholder="Buat Password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="confirm_password" class="form-label">🔒 Confirm Password</label>
+                    <input type="password" class="form-control" name="confirm_password" id="signupconfirm_password" 
+                        placeholder="Ulangi Password" required>
+                </div>
+                <button type="submit" class="btn btn-custom w-100">SIGNUP</button>
+            </form>
+    
+            <!-- Menampilkan Pesan Alert di Bawah Form -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{% if message.tags == 'error' %}danger{% elif message.tags == 'success' %}primary{% else %}secondary{% endif %} mt-3">
+                        <p class="mb-0">{{ message }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
         </div>
-    {% endif %}
+    </div>
+    
 {% endblock %}

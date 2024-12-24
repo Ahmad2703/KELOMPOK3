@@ -5,7 +5,22 @@
 
 <head>
   <style>
+    .container-recap-values {
+      margin-left: 2rem;
+      width: 90%;
+      /* background-color: #000; */
+      margin-top: 1rem;
+      padding-bottom: 2rem;
+    }
     /* list mahasiswa */
+    .title-task h1{
+      color: #3412F6;
+      font-weight: 600;
+    }
+    .title-task{
+        border-bottom: 1px solid #3412F6;
+        padding-bottom: 1rem;
+    }
     .mahasiswa-item {
       display: flex;
       justify-content: space-between;
@@ -161,66 +176,54 @@
         margin: auto;
       }
     }
+    
   </style>
 </head>
-<!-- Main -->
-<div class="container-recap-values">
-  <div class="title-task">
-    <h1>Dosen</h1>
-  </div>
-  <div class="list-mahasiswa">
-    <div class="mahasiswa-item">
-      <div class="profile">
-        <div class="profile-icon">
-          <img src="./img/profile.jpg" alt="Profile Icon" />
+      <!-- Main -->
+      <div class="container-recap-values">
+        <div class="title-task">
+          <h1>Dosen</h1>
         </div>
-        <span class="name">Muhammad Imam</span>
-      </div>
-    </div>
-  </div>
-  <div class="title-task mt-5">
-    <h1>Mahasiswa</h1>
-  </div>
-  <div class="list-mahasiswa">
-    <div class="mahasiswa-item">
-      <div class="profile">
-        <div class="profile-icon">
-          <img src="./img/profile.jpg" alt="Profile Icon" />
+        <div class="list-mahasiswa">
+          <div class="mahasiswa-item">
+            <div class="profile">
+              <div class="profile-icon">
+                {% if course.teacher.image %}
+                <img src="{{ course.teacher.image.url }}" alt="Profile Icon" />
+                {% else %}
+                <img src="{% static 'img/profile.jpg' %}" alt="Default Profile Icon" />
+                {% endif %}
+              </div>
+              <span class="name">{{course.teacher.name}}</span>
+            </div>
+          </div>
         </div>
-        <span class="name">Muhammad Imam</span>
-      </div>
-      <div class="progress-container">
-        <div class="progress-bar">
-          <span class="progress-label">25%</span>
+        <div class="title-task mt-5">
+          <h1>Mahasiswa</h1>
         </div>
-      </div>
-    </div>
-    <div class="mahasiswa-item">
-      <div class="profile">
-        <div class="profile-icon">
-          <img src="./img/profile.jpg" alt="Profile Icon" />
+        <div class="list-mahasiswa">
+          {% for user in enrolled_users %}
+          <div class="mahasiswa-item">
+            <div class="profile">
+              <div class="profile-icon">
+                {% if user.image %}
+                <img src="{{ user.image.url }}" alt="Profile Icon" />
+                {% else %}
+                <img src="{% static 'img/profile.jpg' %}" alt="Default Profile Icon" />
+                {% endif %}
+              </div>
+              <span class="name">{{ user.name }}</span>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar">
+                <span class="progress-label">25%</span>
+              </div>
+            </div>
+          </div>
+          {% empty %}
+          <p>Tidak ada mahasiswa yang terdaftar di kursus ini.</p>
+          {% endfor %}
         </div>
-        <span class="name">Muhammad Imam</span>
+        
       </div>
-      <div class="progress-container">
-        <div class="progress-bar">
-          <span class="progress-label">25%</span>
-        </div>
-      </div>
-    </div>
-    <div class="mahasiswa-item">
-      <div class="profile">
-        <div class="profile-icon">
-          <img src="./img/profile.jpg" alt="Profile Icon" />
-        </div>
-        <span class="name">Muhammad Imam</span>
-      </div>
-      <div class="progress-container">
-        <div class="progress-bar">
-          <span class="progress-label">25%</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 {% endblock %}

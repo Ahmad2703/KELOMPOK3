@@ -8,13 +8,14 @@
       .title-task h1 {
         color: blue; 
         border-bottom: 1px solid blue; 
-        padding-bottom: 0.5rem; 
+        padding-bottom: 0.5rem;
+        font-weight: bold; 
     }
       .container-presence {
-          margin-left: 4rem;
-          width: 80%;
+          margin-left: 2rem;
+          width: 90%;
           /* background-color: #000; */
-          margin-top: 6rem;
+          margin-top: 3rem;
           padding-bottom: 2rem;
       }
       .week-to {
@@ -29,6 +30,7 @@
       .button-presence a {
           /* padding: 2rem 2rem ; */
           color: black;
+          font-weight: bold;
           width: 10px;
       }
       .bg-button {
@@ -42,70 +44,149 @@
   </style>
 </head>
       <!-- Main -->
-      <div class="container-presence">
+    <div class="container-presence">
         <div class="title-task">
-          <h1>Kehadiran</h1>
+          <h1>Kehadiran Mata Kuliah {{ course.name }}</h1>
         </div>
-
-        <div class="wrap-fill-presence mt-1">
-          <div class="week-to d-flex gap-4">
-            <div class="icon-calendar">
-              <i class="fa-regular fa-calendar-days"></i>
+        <div id="presence-container">
+            <!-- Presensi Minggu ke-1 -->
+            <div class="wrap-fill-presence mt-1" data-week="1" data-date="2024-12-12">
+                <div class="week-to d-flex gap-4">
+                    <div class="icon-calendar">
+                        <i class="fa-regular fa-calendar-days"></i>
+                    </div>
+                    <p>Minggu ke-1</p>
+                </div>
+                <div class="button-presence">
+                    <p class="presence-date">16 Desember 2024</p>
+                    <div class="bg-button text-center">
+                        <a href="#" class="presence-btn" onclick="handlePresence(1)">Presensi [M]</a>
+                        <p class="status" id="status-week-1">Presensi belum dibuka</p>
+                        <a href="#" class="reset-btn" onclick="resetPresence(1)">Reset Presensi</a>
+                    </div>
+                </div>
             </div>
-            <p>Minggu ke-1</p>
-          </div>
-          <div class="button-presence">
-            <p>13 November 2024 20.00</p>
-            <div class="bg-button text-center">
-              <a href="">Presensi [M]</a>
-              <p>Terbuka</p>
+        
+            <!-- Presensi Minggu ke-2 -->
+            <div class="wrap-fill-presence mt-1" data-week="2" data-date="2024-12-19">
+                <div class="week-to d-flex gap-4">
+                    <div class="icon-calendar">
+                        <i class="fa-regular fa-calendar-days"></i>
+                    </div>
+                    <p>Minggu ke-2</p>
+                </div>
+                <div class="button-presence">
+                    <p class="presence-date">20 Desember 2024</p>
+                    <div class="bg-button text-center">
+                        <a href="#" class="presence-btn" onclick="handlePresence(2)">Presensi [M]</a>
+                        <p class="status" id="status-week-2">Presensi belum dibuka</p>
+                        <a href="#" class="reset-btn" onclick="resetPresence(2)">Reset Presensi</a>
+                    </div>
+                </div>
             </div>
-          </div>
+        
+            <!-- Presensi Minggu ke-3 -->
+            <div class="wrap-fill-presence mt-1" data-week="3" data-date="2024-12-26">
+                <div class="week-to d-flex gap-4">
+                    <div class="icon-calendar">
+                        <i class="fa-regular fa-calendar-days"></i>
+                    </div>
+                    <p>Minggu ke-3</p>
+                </div>
+                <div class="button-presence">
+                    <p class="presence-date">26 Desember 2024</p>
+                    <div class="bg-button text-center">
+                        <a href="#" class="presence-btn" onclick="handlePresence(3)">Presensi [M]</a>
+                        <p class="status" id="status-week-3">Presensi belum dibuka</p>
+                        <a href="#" class="reset-btn" onclick="resetPresence(3)">Reset Presensi</a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Presensi Minggu ke-4 -->
+            <div class="wrap-fill-presence mt-1" data-week="4" data-date="2025-01-02">
+                <div class="week-to d-flex gap-4">
+                    <div class="icon-calendar">
+                        <i class="fa-regular fa-calendar-days"></i>
+                    </div>
+                    <p>Minggu ke-4</p>
+                </div>
+                <div class="button-presence">
+                    <p class="presence-date">02 Januari 2025</p>
+                    <div class="bg-button text-center">
+                        <a href="#" class="presence-btn" onclick="handlePresence(4)">Presensi [M]</a>
+                        <p class="status" id="status-week-4">Presensi belum dibuka</p>
+                        <a href="#" class="reset-btn" onclick="resetPresence(4)">Reset Presensi</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="wrap-fill-presence mt-1">
-          <div class="week-to d-flex gap-4">
-            <div class="icon-calendar">
-              <i class="fa-regular fa-calendar-days"></i>
-            </div>
-            <p>Minggu ke-1</p>
-          </div>
-          <div class="button-presence">
-            <p>13 November 2024 20.00</p>
-            <div class="bg-button text-center">
-              <a href="">Presensi [M]</a>
-              <p>Terbuka</p>
-            </div>
-          </div>
-        </div>
-        <div class="wrap-fill-presence mt-1">
-          <div class="week-to d-flex gap-4">
-            <div class="icon-calendar">
-              <i class="fa-regular fa-calendar-days"></i>
-            </div>
-            <p>Minggu ke-1</p>
-          </div>
-          <div class="button-presence">
-            <p>13 November 2024 20.00</p>
-            <div class="bg-button text-center">
-              <a href="">Presensi [M]</a>
-              <p>Terbuka</p>
-            </div>
-          </div>
-        </div>
-        <div class="wrap-fill-presence mt-1">
-          <div class="week-to d-flex gap-4">
-            <div class="icon-calendar">
-              <i class="fa-regular fa-calendar-days"></i>
-            </div>
-            <p>Minggu ke-1</p>
-          </div>
-          <div class="button-presence">
-            <p>13 November 2024 20.00</p>
-            <div class="bg-button text-center">
-              <a href="">Presensi [M]</a>
-              <p>Terbuka</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        
+        <script>
+          // Fungsi untuk memuat status presensi dari localStorage dan menampilkan status yang sesuai
+          function loadPresenceStatus() {
+            for (let week = 1; week <= 4; week++) {
+              const isPresensiDone = localStorage.getItem(`status-week-${week}`) === "true";
+              const statusText = isPresensiDone
+                ? "Presensi telah dilakukan"
+                : "Presensi belum dibuka";
+        
+              // Menampilkan status presensi yang sesuai
+              document.getElementById(`status-week-${week}`).innerText = statusText;
+        
+              // Menonaktifkan tombol presensi jika sudah dilakukan
+              const button = document.querySelector(`[data-week="${week}"] .presence-btn`);
+              if (isPresensiDone) {
+                button.style.pointerEvents = "none";
+                button.style.backgroundColor = "none";
+              }
+            }
+          }
+        
+          // Fungsi untuk menangani presensi
+          function handlePresence(week) {
+            const presenceElement = document.querySelector(`[data-week="${week}"]`);
+            const presenceDateStr = presenceElement.getAttribute('data-date');
+            const presenceDate = new Date(presenceDateStr);
+        
+            const today = new Date();
+        
+            const isPresensiDone = localStorage.getItem(`status-week-${week}`) === "true";
+            const statusText = isPresensiDone
+              ? "Presensi telah dilakukan"
+              : today >= presenceDate
+              ? "Presensi dibuka"
+              : "Presensi belum dibuka";
+        
+            document.getElementById(`status-week-${week}`).innerText = statusText;
+        
+            if (!isPresensiDone && today >= presenceDate) {
+              alert(`Berhasil presensi minggu ke-${week}!`);
+              document.getElementById(`status-week-${week}`).innerText = "Presensi telah dilakukan";
+              localStorage.setItem(`status-week-${week}`, "true");
+              loadPresenceStatus(); // Memperbarui status presensi setelah berhasil
+            } else if (isPresensiDone) {
+              alert(`Presensi minggu ke-${week} sudah dilakukan!`);
+            } else {
+              alert(`Presensi minggu ke-${week} belum dibuka!`);
+            }
+          }
+        
+          // Fungsi untuk mereset presensi
+          function resetPresence(week) {
+            localStorage.removeItem(`status-week-${week}`);
+            const statusText = document.getElementById(`status-week-${week}`);
+            statusText.innerText = "Presensi belum dibuka";
+            const button = document.querySelector(`[data-week="${week}"] .presence-btn`);
+            button.style.pointerEvents = "auto";
+            button.style.backgroundColor = "none";
+        
+            alert(`Status presensi untuk minggu ke-${week} telah direset.`);
+          }
+        
+          // Muat status presensi ketika halaman dimuat
+          window.onload = loadPresenceStatus;
+        </script>
+        
+    </div>
 {% endblock %}

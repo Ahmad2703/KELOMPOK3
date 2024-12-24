@@ -7,33 +7,66 @@
             <!-- Bagian Profile -->
             <div class="profile mt-4">
                 <h2>Profile Saya</h2>
-                <img id="profileImage" src="{% static 'img/Minion.jpg' %}" alt="Foto Profil" class="img-fluid rounded-circle mb-3"
+        
+                <!-- Menampilkan Foto Profil -->
+                <img id="profileImage" 
+                    src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}/static/img/profile.jpg{% endif %}" 
+                    alt="Foto Profil" 
+                    class="img-fluid rounded-circle mb-3" 
                     width="150">
-                <p class="img-description"> Klik pada gambar untuk mengubah foto </p>
-                <input type="file" class="d-none" id="imageUpload" accept="image/*">
-                <!-- Form Profile-->
-                <form id="profileForm">
+
+
+                <!-- Mengubah Foto Profil -->
+                <form method="POST" enctype="multipart/form-data" id="profileForm">
+                    <p class="img-description"> Klik pada gambar untuk mengubah foto </p>
+                    <input type="file" class="d-none" id="imageUpload" accept="image/*" name="image">
+                
+                    {% csrf_token %}
                     <div class="mb-3">
                         <label for="name" class="form-label"><strong>Nama:</strong></label>
-                        <input type="text" class="form-control" id="name" value="{{ user.username }}" placeholder="Masukkan nama Anda">
+                        <input type="text" class="form-control" id="name" name="name" value="{{ user.profile.name }}" placeholder="Masukkan nama Anda">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label"><strong>Email:</strong></label>
-                        <input type="email" class="form-control" id="email" value="{{ user.email }}" placeholder="Masukkan email Anda">
+                        <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" placeholder="Masukkan email Anda">
                     </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label"><strong>Telepon:</strong></label>
-                        <input type="tel" class="form-control" id="phone" value="{{ user.phone }}" placeholder="Masukkan nomor telepon Anda"
-                            pattern="[0-9]{10,15}" title="Masukkan nomor telepon yang valid (10-15 digit)" required>
+                        <input type="tel" class="form-control" id="phone" name="phone" value="{{ user.profile.phone }}" placeholder="Masukkan nomor telepon Anda" pattern="[0-9]{10,15}" title="Masukkan nomor telepon yang valid (10-15 digit)" required>
                     </div>
                     <div class="mb-3">
                         <label for="about" class="form-label"><strong>Tentang Saya:</strong></label>
-                        <textarea class="form-control" id="about" rows="3" placeholder="Ceritakan tentang diri Anda">{{ user.about }}</textarea>
+                        <textarea class="form-control" id="about" name="about" rows="3" placeholder="Ceritakan tentang diri Anda">{{ user.profile.about }}</textarea>
                     </div>
-                    <button type="submit" class="btn btn-custom">SIMPAN</button>
+                    <button type="submit" class="btn btn-custom" onclick="showNotification(event)">SIMPAN</button>
+                
+                    <!-- Notifikasi -->
+                    <div id="notification" class="alert alert-success mt-3 d-none" role="alert">
+                        Perubahan telah tersimpan!
+                    </div>
                 </form>
                 
+                <!-- JavaScript -->
+                <script>
+                    function showNotification(event) {
+                        event.preventDefault();  // Mencegah form submit langsung (untuk keperluan demo)
+                        const notification = document.getElementById('notification');
+                        notification.classList.remove('d-none');  // Menampilkan notifikasi
+                        
+                        // Jika ingin melanjutkan submit form, tambahkan ini setelah delay
+                        setTimeout(function () {
+                            document.getElementById('profileForm').submit();
+                        }, 1000);  // Delay submit form selama 1 detik
+                    }
+                </script>                
             </div>
         </div>
-    </div>
+        
+        <script>
+            // Mengubah foto profil saat diklik
+            document.getElementById('profileImage').addEventListener('click', function() {
+                document.getElementById('imageUpload').click();
+            });
+        </script>
+        
 {% endblock %}
